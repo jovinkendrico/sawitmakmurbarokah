@@ -56,6 +56,7 @@
                                     </a>
                                     <form method="post" action="{{route('admin.master.karyawan.delete',$karyawan->id)}}" accept-charset="UTF-8" style="display:inline">
                                       @csrf
+                                      @method('DELETE')
                                       <button type="submit" class="btn btn-danger btn-sm">
                                           <i class="fas fa-trash"></i>Delete
                                       </button>

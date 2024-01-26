@@ -29,5 +29,5 @@ Route::controller(KaryawanController::class)->prefix('admin/master/karyawan')->n
     Route::get('/show/{id}','show')->name('show')->middleware('auth');
     Route::get('/edit/{id}','edit')->name('edit')->middleware('auth');
     Route::put('/update/{id}','update')->name('update')->middleware('auth');
-    Route::post('/delete/{id}', 'destroy')->name('delete')->middleware('auth');
+    Route::delete('/delete/{id}', 'destroy')->name('delete')->middleware('auth');
 });

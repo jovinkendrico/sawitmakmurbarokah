@@ -51,7 +51,9 @@ class KaryawanController extends Controller
     public function show(string $id)
     {
         //
-        return view('admin.master.karyawan.show');
+        $karyawan = Karyawan::findOrFail($id);
+
+        return view('admin.master.karyawan.show',compact('karyawan'));
     }
 
     /**
@@ -72,7 +74,7 @@ class KaryawanController extends Controller
         //
         $karyawan = $request->validated();
 
-        Karyawan::update($karyawan);
+        Karyawan::findOrFail($id)->update($karyawan);
 
         Session::flash('success', 'Data Karyawan Telah Diubah.');
         return redirect()->route('admin.master.karyawan.index');
@@ -85,6 +87,7 @@ class KaryawanController extends Controller
     public function destroy(string $id)
     {
         //
+        Karyawan::findOrFail($id)->delete();
         Session::flash('success', 'Data Karyawan Telah Dihapus.');
         return redirect()->route('admin.master.karyawan.index');
 

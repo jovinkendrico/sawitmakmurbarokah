@@ -11,7 +11,7 @@ class UpdatePostRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,9 @@ class UpdatePostRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = $this->route('id');
         return [
-            'nik' => 'required|unique:karyawans,nik|max:255',
+            'nik' => 'required|unique:karyawans,nik,'. $id .'|min:16|max:16',
             'nama' => 'required|max:255',
             'jk' => 'required|in:l,p',
             'alamat' => 'required|max:255',

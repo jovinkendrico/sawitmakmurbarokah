@@ -52,48 +52,7 @@
                 <p>Karyawan</p>
               </a>
             </li>
-            <li class="nav-item">
-                <a href="/admin/suppliers" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Supplier</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/admin/customers" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Customer</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/admin/truks" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Truk</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/admin/perlengkapans" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Perlengkapan</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/admin/pihakjasas" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pihak Jasa</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/admin/jasas" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Jasa</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/admin/akuns" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Akun</p>
-                </a>
-            </li>
+
           </ul>
         </li>
         <li class="nav-item">

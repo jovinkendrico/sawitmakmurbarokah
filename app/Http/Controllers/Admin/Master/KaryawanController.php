@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Admin\Master;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Master\Karyawan\StoreKaryawanRequest;
-use App\Http\Requests\Admin\Master\Karyawan\UpdatePostRequest;
+use App\Http\Requests\Admin\Master\Karyawan\UpdateKaryawanRequest;
 use App\Models\Karyawan;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class KaryawanController extends Controller
@@ -69,7 +68,7 @@ class KaryawanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, string $id)
+    public function update(UpdateKaryawanRequest $request, string $id)
     {
         //
         $karyawan = $request->validated();

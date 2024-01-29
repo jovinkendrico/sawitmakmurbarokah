@@ -12,7 +12,7 @@
         <img src="/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Isi User Name</a>
+        <a href="#" class="d-block">{{Auth::user()->name}}</a>
       </div>
     </div>
 
@@ -52,7 +52,14 @@
                 <p>Karyawan</p>
               </a>
             </li>
-
+          </ul>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{route('admin.master.blok.index')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Blok</p>
+              </a>
+            </li>
           </ul>
         </li>
         <li class="nav-item">

@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin\Master\Karyawan;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePostRequest extends FormRequest
+class UpdateKaryawanRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

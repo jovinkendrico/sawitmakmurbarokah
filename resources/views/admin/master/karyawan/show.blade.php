@@ -14,7 +14,7 @@
                     <table class="table">
                         <tbody>
                             <tr>
-                                <th>ID</th>
+                                <th style="width: 20%">ID</th>
                                 <td>{{ $karyawan->id }}</td>
                             </tr>
                             <tr>

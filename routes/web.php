@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Master\BlokController;
 use App\Http\Controllers\Admin\Master\KaryawanController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,12 +23,22 @@ Route::get('/admin', function () {
 })->middleware('auth');
 
 
-Route::controller(KaryawanController::class)->prefix('admin/master/karyawan')->name('admin.master.karyawan.')->group(function(){
-    Route::get('/index', 'index')->name('index')->middleware('auth');
-    Route::get('/create','create')->name('create')->middleware('auth');
-    Route::post('/store','store')->name('store')->middleware('auth');
-    Route::get('/show/{id}','show')->name('show')->middleware('auth');
-    Route::get('/edit/{id}','edit')->name('edit')->middleware('auth');
-    Route::put('/update/{id}','update')->name('update')->middleware('auth');
-    Route::delete('/delete/{id}', 'destroy')->name('delete')->middleware('auth');
+Route::controller(KaryawanController::class)->prefix('admin/master/karyawan')->name('admin.master.karyawan.')->middleware('auth')->group(function(){
+    Route::get('/index', 'index')->name('index');
+    Route::get('/create','create')->name('create');
+    Route::post('/store','store')->name('store');
+    Route::get('/show/{id}','show')->name('show');
+    Route::get('/edit/{id}','edit')->name('edit');
+    Route::put('/update/{id}','update')->name('update');
+    Route::delete('/delete/{id}', 'destroy')->name('delete');
+});
+
+Route::controller(BlokController::class)->prefix('admin/master/blok')->name('admin.master.blok.')->middleware('auth')->group(function(){
+    Route::get('/index', 'index')->name('index');
+    Route::get('/create','create')->name('create');
+    Route::post('/store','store')->name('store');
+    Route::get('/show/{id}','show')->name('show');
+    Route::get('/edit/{id}','edit')->name('edit');
+    Route::put('/update/{id}','update')->name('update');
+    Route::delete('/delete/{id}', 'destroy')->name('delete');
 });

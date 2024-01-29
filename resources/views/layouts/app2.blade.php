@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sawit Makmur | @yield('title')</title>
+  <title>CV. Anugerah Tuah Barokah | @yield('title')</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -151,11 +151,18 @@
 <script src="/AdminLTE/plugins/daterangepicker/daterangepicker.js"></script>
 <script src="/AdminLTE/plugins/select2/js/select2.full.min.js"></script>
 
+<!-- jsPDF -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+<!-- OR pdfMake -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+
 <script>
     $(function () {
       $("#example1").DataTable({
         "pageLength":25,
         "responsive": true, "lengthChange": false, "autoWidth": false,
+        "dom": 'Bfrtip',
         "buttons": [
             {
                 extend: 'csv',
@@ -173,7 +180,70 @@
                 extend: 'pdf',
                 text: '<i class="far fa-file-pdf"></i> PDF',
                 className: 'btn btn-danger btn-sm',
-                titleAttr: 'Export as PDF'
+                titleAttr: 'Export as PDF',
+                customize: function (doc) {
+                    // Remove action column from the PDF
+                    doc.content[1].table.body.forEach(function(row) {
+                        row.splice(-1, 1);
+                    });
+                }
+            },
+            {
+                extend: 'print',
+                text: '<i class="far fa-file-pdf"></i> Print',
+                className: 'btn btn-primary btn-sm',
+                customize: function (doc) {
+                    // Set PDF title
+                    doc.content[0].text = "Custom PDF Title";
+
+                    // Set page margins
+                    doc.pageMargins = [40, 60, 40, 60];
+
+                    // Set table header styling
+                    doc.styles.tableHeader = {
+                        bold: true,
+                        fontSize: 12,
+                        color: 'black'
+                    };
+
+                    // Set table body styling
+                    doc.styles.tableBodyEven = {
+                        fontSize: 10,
+                        color: 'black'
+                    };
+                    doc.styles.tableBodyOdd = {
+                        fontSize: 10,
+                        color: 'black'
+                    };
+
+                    // Add a custom header
+                    doc['header'] = (function () {
+                        return {
+                            columns: [
+                                {
+                                    alignment: 'center',
+                                    text: 'Custom Header',
+                                    fontSize: 18,
+                                    margin: [0, 10, 0, 20]
+                                }
+                            ],
+                            margin: 20
+                        };
+                    });
+                    // Add a custom footer
+                    doc['footer'] = (function (page, pages) {
+                        return {
+                            columns: [
+                                {
+                                    alignment: 'center',
+                                    text: 'Page ' + page.toString() + ' of ' + pages.toString(),
+                                    fontSize: 10
+                                }
+                            ],
+                            margin: [0, 20, 0, 20]
+                        };
+                    });
+                }
             },
             {
                 extend: 'colvis',
@@ -181,7 +251,7 @@
                 className: 'btn btn-secondary btn-sm',
                 titleAttr: 'Show/Hide Columns'
             }
-        ]
+        ],
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
       $('#example2').DataTable({
         "paging": true,

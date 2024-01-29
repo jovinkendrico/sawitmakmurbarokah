@@ -11,7 +11,7 @@ class StorePksRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,12 @@ class StorePksRequest extends FormRequest
     {
         return [
             //
+            'nama' => 'required|unique:pks,nama|max:255',
+            'alamatpks' => 'nullable',
+            'alamatkantor' => 'nullable',
+            'email' => 'nullable|max:100',
+            'notelp' => 'nullable|max:14',
+
         ];
     }
 }

@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('pks', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('alamatpks')->nullable();
+            $table->string('alamatkantor')->nullable();
+            $table->string('notelp')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }

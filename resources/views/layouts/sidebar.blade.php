@@ -63,7 +63,13 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Armada</p>
                 </a>
-              </li>
+            </li>
+            <li class="nav-item">
+            <a href="{{route('admin.master.pks.index')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>PKS</p>
+            </a>
+            </li>
           </ul>
         </li>
         <li class="nav-item">

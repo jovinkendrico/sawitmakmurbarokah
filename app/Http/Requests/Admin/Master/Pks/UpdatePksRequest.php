@@ -11,7 +11,7 @@ class UpdatePksRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,14 @@ class UpdatePksRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = $this->route('id');
         return [
             //
+            'nama' => 'required|unique:pks,nama,'. $id .'|max:255',
+            'alamatpks' => 'nullable',
+            'alamatkantor' => 'nullable',
+            'email' => 'nullable|max:100',
+            'notelp' => 'nullable|max:14',
         ];
     }
 }

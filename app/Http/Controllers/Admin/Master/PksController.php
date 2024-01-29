@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Admin\Master;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Admin\Master\Pks\StorePksRequest;
+use App\Http\Requests\Admin\Master\Pks\UpdatePksRequest;
+use App\Models\Pks;
+use Illuminate\Support\Facades\Session;
+
 
 class PksController extends Controller
 {
@@ -13,6 +17,8 @@ class PksController extends Controller
     public function index()
     {
         //
+        $pkss = Pks::all();
+        return view('admin.master.pks.index',compact('pkss'));
     }
 
     /**
@@ -21,14 +27,19 @@ class PksController extends Controller
     public function create()
     {
         //
+        return view('admin.master.pks.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePksRequest $request)
     {
         //
+        $pks = $request->validated();
+        Pks::insert($pks);
+        Session::flash('success', 'Data PKS Telah Ditambah.');
+        return redirect()->route('admin.master.pks.index');
     }
 
     /**
@@ -37,6 +48,8 @@ class PksController extends Controller
     public function show(string $id)
     {
         //
+        $pks = Pks::findOrFail($id);
+        return view('admin.master.pks.show',compact('pks'));
     }
 
     /**
@@ -45,14 +58,20 @@ class PksController extends Controller
     public function edit(string $id)
     {
         //
+        $pks = Pks::findOrFail($id);
+        return view('admin.master.pks.edit',compact('pks'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdatePksRequest $request, string $id)
     {
         //
+        $pks = $request->validated();
+        Pks::findOrFail($id)->update($pks);
+        Session::flash('success', 'Data PKS Telah Diubah.');
+        return redirect()->route('admin.master.pks.index');
     }
 
     /**
@@ -61,5 +80,8 @@ class PksController extends Controller
     public function destroy(string $id)
     {
         //
+        Pks::findOrFail($id)->delete();
+        Session::flash('success', 'Data PKS Telah Dihapus.');
+        return redirect()->route('admin.master.pks.index');
     }
 }

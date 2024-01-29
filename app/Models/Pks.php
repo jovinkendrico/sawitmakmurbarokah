@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Pks extends Model
 {
     use HasFactory;
+
+    protected $table = 'pks';
+
+    protected $fillable = [
+        'nama',
+        'alamatpks',
+        'alamatkantor',
+        'notelp',
+        'email'
+    ];
 }

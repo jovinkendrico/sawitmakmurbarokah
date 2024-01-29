@@ -65,10 +65,16 @@
                 </a>
             </li>
             <li class="nav-item">
-            <a href="{{route('admin.master.pks.index')}}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>PKS</p>
-            </a>
+                <a href="{{route('admin.master.pks.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>PKS</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.master.supplier.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Supplier</p>
+                </a>
             </li>
           </ul>
         </li>

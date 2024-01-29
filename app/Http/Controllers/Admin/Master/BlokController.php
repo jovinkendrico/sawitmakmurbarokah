@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Master\Blok\StoreBlokRequest;
 use App\Http\Requests\Admin\Master\Blok\UpdateBlokRequest;
 use App\Models\Blok;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class BlokController extends Controller

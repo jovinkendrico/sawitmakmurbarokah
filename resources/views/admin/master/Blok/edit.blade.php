@@ -66,7 +66,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group float-right">
-                                        <input class="btn btn-primary" type="submit" value="Tambah">
+                                        <input class="btn btn-primary" type="submit" value="Ubah">
                                     </div>
                                 </div>
                             </div>

@@ -94,7 +94,7 @@
                                 <div class="col-md-6">
                                     <label for="tglmasuk">Tanggal Masuk:</label>
                                     <input type="date" name="tglmasuk" id="tglmasuk" class="form-control">
-                                    @error('jabatan')
+                                    @error('tglmasuk')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>

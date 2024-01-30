@@ -102,8 +102,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="tahuntanam">Tahun Pembuatan:</label>
-                                        <input type="number" min="1990" max="2045" step="1" name="tahunpembuatan" id="tahunpembuatan" class="form-control" placeholder="Masukkan Tahun Pembuatan">
+                                        <label for="tahunpembuatan">Tahun Pembuatan:</label>
+                                        <input type="number" min="1900" max="2045" step="1" name="tahunpembuatan" id="tahunpembuatan" class="form-control" placeholder="Masukkan Tahun Pembuatan">
                                         @error('tahunpembuatan')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror

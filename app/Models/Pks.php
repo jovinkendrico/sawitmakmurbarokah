@@ -13,6 +13,7 @@ class Pks extends Model
 
     protected $fillable = [
         'nama',
+        'alias',
         'alamatpks',
         'alamatkantor',
         'notelp',

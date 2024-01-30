@@ -27,6 +27,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nama</th>
+                                <th>Alias</th>
                                 <th>Email</th>
                                 <th>Nomor Telepon</th>
                                 <th style="width: 20%">Action</th>
@@ -37,6 +38,7 @@
                             <tr>
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$supplier->nama}}</td>
+                                <td>{{$supplier->alias}}</td>
                                 <td>{{$supplier->email}}</td>
                                 <td>{{$supplier->notelp}}</td>
                                 <td class="project-actions text-right">

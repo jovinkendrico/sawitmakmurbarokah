@@ -24,6 +24,7 @@ class StorePksRequest extends FormRequest
         return [
             //
             'nama' => 'required|unique:pks,nama|max:255',
+            'alias' => 'required|max:255',
             'alamatpks' => 'nullable',
             'alamatkantor' => 'nullable',
             'email' => 'nullable|max:100',

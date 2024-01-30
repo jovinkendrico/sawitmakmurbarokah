@@ -32,7 +32,15 @@
                                         @enderror
                                     </div>
                                 </div>
-
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="alias">Alias:</label>
+                                        <input type="text" name="alias" id="alias" class="form-control" placeholder="Masukkan Alias">
+                                        @error('alias')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">

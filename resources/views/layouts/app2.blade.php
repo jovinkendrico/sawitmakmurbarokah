@@ -31,11 +31,38 @@
   <link rel="stylesheet" href="/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="/AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
-  <style>
-    .invisible-cell {
-        display: none;
-    }
-</style>
+    <style>
+        .invisible-cell {
+            display: none;
+        }
+    </style>
+    <style>
+        @media print {
+            /* Adjust font size for table */
+            .table {
+                font-size: 16px; /* Adjust this value as needed */
+            }
+
+            /* Reduce padding and margin to fit more content */
+            .invoice {
+                padding: 6px; /* Adjust this value as needed */
+            }
+            .invoice h3, .invoice h4 {
+                margin: 0;
+            }
+            .invoice h3 {
+                font-size: 22px; /* Adjust this value as needed */
+            }
+            .invoice h4 {
+                font-size: 20px; /* Adjust this value as needed */
+            }
+
+            /* Hide unnecessary elements */
+            .sidebar, .navbar {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

@@ -88,25 +88,17 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/pembelian" class="nav-link">
+                <a href="{{route('admin.transaksi.penjualantbs.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>
-                    Pembelian Barang
-                  </p>
+                  <p>Penjualan TBS</p>
                 </a>
               </li>
               <li class="nav-item">
-                  <a href="/penjualan" class="nav-link">
+                  <a href="{{route('admin')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Penjualan Barang</p>
+                    <p>Penjualan Brondolan</p>
                   </a>
               </li>
-              <li class="nav-item">
-                <a href="/penjualan/pendapatan" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Penjualan Pendapatan</p>
-                </a>
-            </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -144,39 +136,32 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                <a href="/" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>
-                    Penjualan
-                    </p>
-                </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Pembelian</p>
+                    <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                        Transaksi
+                        </p>
+                        <i class="fas fa-angle-left right"></i>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('admin.laporan.transaksi.penjualantbs.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                Penjualan TBS
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.laporan.transaksi.penjualantbs.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                Penjualan Brondolan
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-              <li class="nav-item">
-                <a href="/" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>
-                    Cash Masuk
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                  <a href="/" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Cash Keluar</p>
-                  </a>
-              </li>
-              <li class="nav-item">
-                <a href="/" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Akun</p>
-                </a>
-            </li>
             </ul>
           </li>
           <li class="nav-item">

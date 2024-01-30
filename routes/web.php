@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\Laporan\Transaksi\LaporanPenjualantbsController;
 use App\Http\Controllers\Admin\Master\ArmadaController;
 use App\Http\Controllers\Admin\Master\BlokController;
 use App\Http\Controllers\Admin\Master\KaryawanController;
 use App\Http\Controllers\Admin\Master\PksController;
 use App\Http\Controllers\Admin\Master\SupplierController;
+use App\Http\Controllers\Admin\Transaksi\PenjualantbsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +25,7 @@ Auth::routes();
 
 Route::get('/admin', function () {
     return view('admin.dashboard');
-})->middleware('auth');
+})->name('admin')->middleware('auth');
 
 
 Route::controller(KaryawanController::class)->prefix('admin/master/karyawan')->name('admin.master.karyawan.')->middleware('auth')->group(function(){
@@ -74,4 +76,38 @@ Route::controller(SupplierController::class)->prefix('admin/master/supplier')->n
     Route::get('/edit/{id}','edit')->name('edit');
     Route::put('/update/{id}','update')->name('update');
     Route::delete('/delete/{id}', 'destroy')->name('delete');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+Route::controller(PenjualantbsController::class)->prefix('admin/transaksi/penjualantbs')->name('admin.transaksi.penjualantbs.')->middleware('auth')->group(function(){
+    Route::get('/index', 'index')->name('index');
+    Route::get('/create','create')->name('create');
+    Route::post('/store','store')->name('store');
+    Route::get('/show/{id}','show')->name('show');
+    Route::get('/edit/{id}','edit')->name('edit');
+    Route::put('/update/{id}','update')->name('update');
+    Route::delete('/delete/{id}', 'destroy')->name('delete');
+});
+
+
+
+
+
+
+
+//laporan transaksi
+Route::controller(LaporanPenjualantbsController::class)->prefix('admin/laporan/transaksi/penjualantbs')
+->name('admin.laporan.transaksi.penjualantbs.')->middleware('auth')->group(function(){
+    route::get('/create','create')->name('create');
+    route::post('/generate','generate')->name('generate');
 });

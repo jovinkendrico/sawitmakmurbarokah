@@ -14,14 +14,11 @@
             <div class="col-12">
                 <h3>
                     Laporan Penjualan TBS
+                <small class="float-right">Periode: {{$laporanpenjualantbs['periodebulan'] == "" ? '-' : $laporanpenjualantbs['periodebulan']}} {{$laporanpenjualantbs['periodetahun'] == "" ? '' : $laporanpenjualantbs['periodetahun']}}</small>
                 </h3>
               <h4>
                 CV. Anugrah Tuah Barokah
-              </h4>
-              <h4>
-                <small>Periode: {{$laporanpenjualantbs['periodebulan'] == "" ? '-' : $laporanpenjualantbs['periodebulan']}} {{$laporanpenjualantbs['periodetahun'] == "" ? '' : $laporanpenjualantbs['periodetahun']}}</small>
-                <br>
-                <small>Rotasi: {{$laporanpenjualantbs['rotasi'] == "" ? '' : $laporanpenjualantbs['rotasi']}}</small>
+                <small class="float-right">Rotasi: {{$laporanpenjualantbs['rotasi'] == "" ? '' : $laporanpenjualantbs['rotasi']}}</small>
               </h4>
             </div>
             <!-- /.col -->
@@ -69,7 +66,7 @@
                 @foreach ($results as $result)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{\Carbon\Carbon::parse($result->tanggal)->format('d-m')}}</td>
+                        <td>{{\Carbon\Carbon::parse($result->tanggal)->format('d-m-y')}}</td>
                         <td>{{$result['truk']['alias']}}</td>
                         <td>{{number_format($result->netgross,0,'.',',')}}</td>
                         <td>{{number_format($result->penalty,0,'.',',')}}</td>

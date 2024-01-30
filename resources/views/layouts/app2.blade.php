@@ -41,8 +41,12 @@
             /* Adjust font size for table */
             .table {
                 font-size: 16px; /* Adjust this value as needed */
+                padding: 2px;
+                margin: 2px
             }
-
+            .table td, .table th{
+                padding: 0.25rem; /* Adjust as needed */
+            }
             /* Reduce padding and margin to fit more content */
             .invoice {
                 padding: 6px; /* Adjust this value as needed */

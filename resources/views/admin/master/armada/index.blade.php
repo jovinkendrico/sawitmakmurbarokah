@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Data Armada</h3>
-                    <a href="{{ route('admin.master.armada.create') }}" class="btn btn-success btn-sm float-right" title="Add New Cash Masuk">
+                    <a href="{{ route('admin.master.armada.create') }}" class="btn btn-success btn-sm float-right" title="Add New Armada">
                         <i class="fa fa-plus" aria-hidden="true"></i> Add New
                     </a>
                 </div>

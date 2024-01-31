@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Data Blok</h3>
-                    <a href="{{ route('admin.master.blok.create') }}" class="btn btn-success btn-sm float-right" title="Add New Cash Masuk">
+                    <a href="{{ route('admin.master.blok.create') }}" class="btn btn-success btn-sm float-right" title="Add New Blok">
                         <i class="fa fa-plus" aria-hidden="true"></i> Add New
                     </a>
                 </div>

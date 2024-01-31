@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Master\BlokController;
 use App\Http\Controllers\Admin\Master\KaryawanController;
 use App\Http\Controllers\Admin\Master\PksController;
 use App\Http\Controllers\Admin\Master\SupplierController;
+use App\Http\Controllers\Admin\Transaksi\PenjualanBrondolanController;
 use App\Http\Controllers\Admin\Transaksi\PenjualantbsController;
 use Illuminate\Support\Facades\Route;
 
@@ -99,7 +100,15 @@ Route::controller(PenjualantbsController::class)->prefix('admin/transaksi/penjua
     Route::delete('/delete/{id}', 'destroy')->name('delete');
 });
 
-
+Route::controller(PenjualanBrondolanController::class)->prefix('admin/transaksi/penjualanbrondolan')->name('admin.transaksi.penjualanbrondolan.')->middleware('auth')->group(function(){
+    Route::get('/index', 'index')->name('index');
+    Route::get('/create','create')->name('create');
+    Route::post('/store','store')->name('store');
+    Route::get('/show/{id}','show')->name('show');
+    Route::get('/edit/{id}','edit')->name('edit');
+    Route::put('/update/{id}','update')->name('update');
+    Route::delete('/delete/{id}', 'destroy')->name('delete');
+});
 
 
 

@@ -336,7 +336,16 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="grade">Grade:</label>
+                                        <input type="text" name="grade" id="grade" class="form-control" placeholder="Masukkan Grade">
+                                        @error('grade')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
                                     <div class="form-group">
                                         <label for="keterangan">Keterangan:</label>
                                         <input type="text" name="keterangan" id="keterangan" class="form-control" value="{{$penjualantbs->keterangan}}"  placeholder="Masukkan Keterangan">
@@ -346,7 +355,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group float-right">
-                                        <input class="btn btn-primary" type="submit" value="Tambah">
+                                        <input class="btn btn-primary" type="submit" value="Ubah">
                                     </div>
                                 </div>
                             </div>

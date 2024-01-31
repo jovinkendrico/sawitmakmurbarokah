@@ -17,15 +17,14 @@ return new class extends Migration
             $table->year('periodetahun');
             $table->enum('rotasi',[1,2,3]);
             $table->date('tanggal');
-            $table->integer('id_armada');
+            $table->integer('id_armada')->nullable();
             $table->integer('id_supplier')->nullable();
-            $table->integer('id_pks');
+            $table->integer('id_pks')->nullable();
             $table->integer('weighin');
             $table->integer('weighout');
             $table->integer('netgross');
             $table->integer('penalty');
             $table->integer('netweigh');
-            $table->string('grade')->nullable();
             $table->bigInteger('harga')->nullable();
             $table->bigInteger('total')->nullable();
             $table->float('pphpercentage',3,2)->nullable();

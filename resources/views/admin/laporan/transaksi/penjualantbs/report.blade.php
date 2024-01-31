@@ -117,9 +117,11 @@
             <!-- /.col -->
           </div>
           <!-- /.row -->
-          <div class="row no-print">
-            <div class="col-12">
-                <button class="btn btn-primary" onclick="printReport()">Print Report</button>
+          <div class="row mt-4 no-print">
+            <div class="col-md-12 text-right">
+                <button class="btn btn-success" onclick="printReport()">
+                    <i class="fas fa-print"></i> Print Invoice
+                </button>
             </div>
         </div>
           <!-- /.row -->

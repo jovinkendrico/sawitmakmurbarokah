@@ -36,6 +36,7 @@ class PenjualanTbs extends Model
         'tgllunas',
         'ketlunas',
         'keterangan',
+        'ref'
     ];
 
     public function truk(){

@@ -11,7 +11,7 @@ class UpdatePenjualanBrondolanRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,31 @@ class UpdatePenjualanBrondolanRequest extends FormRequest
     {
         return [
             //
+            'periodebulan' =>'required',
+            'periodetahun' =>'required',
+            'rotasi' => 'required',
+            'tanggal' => 'required|date',
+            'id_armada' => 'nullable',
+            'id_supplier' => 'nullable',
+            'id_pks' => 'nullable',
+            'weighin' => 'required|integer',
+            'weighout'=> 'required|integer',
+            'netgross'=> 'required|integer',
+            'penalty' => 'required|integer',
+            'netweigh'=> 'required|integer',
+            'harga' => 'nullable',
+            'total' => 'nullable',
+            'pphpercentage' => 'nullable',
+            'pph'=> 'nullable',
+            'fee'=> 'nullable',
+            'netto' => 'nullable',
+            'status' => 'nullable',
+            'pelunasan' => 'nullable',
+            'tgllunas' => 'nullable|date',
+            'ketlunas' => 'nullable',
+            'keterangan' => 'nullable',
+            'ref' => 'nullable',
+
         ];
     }
 }

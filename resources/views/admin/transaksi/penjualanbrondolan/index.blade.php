@@ -1,6 +1,6 @@
 @extends('layouts.app2')
 
-@section('title', 'Penjualan TBS')
+@section('title', 'Penjualan Brondolan')
 @section('content')
 @if(Session::has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -41,22 +41,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($penjualantbss as $penjualantbs)
+                            @foreach ($penjualanbrondolans as $penjualanbrondolan)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{\Carbon\Carbon::parse($penjualantbs->tanggal)->format('d-m-Y')}}</td>
-                                <td>{{$penjualantbs['truk']['nopol']}}</td>
-                                <td>{{number_format($penjualantbs->netweigh,0,'.',',')}} Kg</td>
-                                <td>Rp. {{number_format($penjualantbs->harga, 0, '.', ',')}}</td>
-                                <td>Rp. {{number_format($penjualantbs->total, 0, '.', ',')}}</td>
-                                <td>Rp. {{number_format($penjualantbs->pph, 0, '.', ',')}}</td>
-                                <td>Rp. {{number_format($penjualantbs->fee, 0, '.', ',')}}</td>
-                                <td>Rp. {{number_format($penjualantbs->netto, 0, '.', ',')}}</td>
-                                <td>{{$penjualantbs['pks']['alias']}}</td>
-                                <td>{{$penjualantbs['supplier']['alias']}}</td>
+                                <td>{{\Carbon\Carbon::parse($penjualanbrondolan->tanggal)->format('d-m-Y')}}</td>
+                                <td>{{$penjualanbrondolan->id_truk ? $penjualanbrondolan['truk']['nopol'] : "NIHIL" }}</td>
+                                <td>{{number_format($penjualanbrondolan->netweigh,0,'.',',')}} Kg</td>
+                                <td>Rp. {{number_format($penjualanbrondolan->harga, 0, '.', ',')}}</td>
+                                <td>Rp. {{number_format($penjualanbrondolan->total, 0, '.', ',')}}</td>
+                                <td>Rp. {{number_format($penjualanbrondolan->pph, 0, '.', ',')}}</td>
+                                <td>Rp. {{number_format($penjualanbrondolan->fee, 0, '.', ',')}}</td>
+                                <td>Rp. {{number_format($penjualanbrondolan->netto, 0, '.', ',')}}</td>
+                                <td>{{$penjualanbrondolan->id_pks ?  $penjualanbrondolan['pks']['alias'] : 'AGEN'}}</td>
+                                <td>{{$penjualanbrondolan->id_supplier ? $penjualanbrondolan['supplier']['alias'] : 'AGEN'}}</td>
                                 <td class="text-center">
                                     @php
-                                        $iconClass = ($penjualantbs->status == 'N') ? 'fas fa-times text-danger' : 'fas fa-check text-success';
+                                        $iconClass = ($penjualanbrondolan->status == 'N') ? 'fas fa-times text-danger' : 'fas fa-check text-success';
                                         echo "<i class='$iconClass'></i>";
                                     @endphp
                                   </td>
@@ -66,11 +66,11 @@
                                             ...
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item text-primary" href="{{ route('admin.transaksi.penjualantbs.show',$penjualantbs->id) }}"><i class="fas fa-folder">
+                                            <a class="dropdown-item text-primary" href="{{ route('admin.transaksi.penjualanbrondolan.show',$penjualanbrondolan->id) }}"><i class="fas fa-folder">
                                             </i>View</a>
-                                            <a class="dropdown-item text-info" href="{{ route('admin.transaksi.penjualantbs.edit',$penjualantbs->id) }}"> <i class="fas fa-pencil-alt">
+                                            <a class="dropdown-item text-info" href="{{ route('admin.transaksi.penjualanbrondolan.edit',$penjualanbrondolan->id) }}"> <i class="fas fa-pencil-alt">
                                             </i>Edit</a>
-                                            <form method="post" action="{{ route('admin.transaksi.penjualantbs.delete',$penjualantbs->id) }}" accept-charset="UTF-8" style="display:inline">
+                                            <form method="post" action="{{ route('admin.transaksi.penjualanbrondolan.delete',$penjualanbrondolan->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="dropdown-item text-danger"><i class="fas fa-trash"></i>Delete</button>

@@ -27,7 +27,7 @@ class StorePenjualantbsRequest extends FormRequest
             'rotasi' => 'required',
             'tanggal' => 'required|date',
             'id_armada' => 'required',
-            'id_supplier' => 'nullable',
+            'id_supplier' => 'required',
             'id_pks' => 'required',
             'weighin' => 'required|integer',
             'weighout'=> 'required|integer',
@@ -46,6 +46,7 @@ class StorePenjualantbsRequest extends FormRequest
             'tgllunas' => 'nullable|date',
             'ketlunas' => 'nullable',
             'keterangan' => 'nullable',
+            'ref' => 'nullable',
         ];
     }
 }

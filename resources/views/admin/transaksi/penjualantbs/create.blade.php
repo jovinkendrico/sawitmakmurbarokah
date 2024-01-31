@@ -28,18 +28,18 @@
                                         <label for="periodebulan">Periode Bulan:</label>
                                         <select class="form-control select2bs4" id="periodebulan" name="periodebulan" style="width: 100%;">
                                             <option disabled selected value> -- Pilih Periode Bulan -- </option>
-                                            <option value="Januari">Januari</option>
-                                            <option value="Februari">Februari</option>
-                                            <option value="Maret">Maret</option>
-                                            <option value="April">April</option>
-                                            <option value="Mei">Mei</option>
-                                            <option value="Juni">Juni</option>
-                                            <option value="Juli">Juli</option>
-                                            <option value="Agustus">Agustus</option>
-                                            <option value="September">September</option>
-                                            <option value="Oktober">Oktober</option>
-                                            <option value="November">November</option>
-                                            <option value="Desember">Desember</option>
+                                            <option value="Januari" {{ old('periodebulan') == 'Januari' ? 'selected' : '' }}>Januari</option>
+                                            <option value="Februari" {{ old('periodebulan') == 'Februari' ? 'selected' : '' }}>Februari</option>
+                                            <option value="Maret" {{ old('periodebulan') == 'Maret' ? 'selected' : '' }}>Maret</option>
+                                            <option value="April" {{ old('periodebulan') == 'April' ? 'selected' : '' }}>April</option>
+                                            <option value="Mei" {{ old('periodebulan') == 'Mei' ? 'selected' : '' }}>Mei</option>
+                                            <option value="Juni" {{ old('periodebulan') == 'Juni' ? 'selected' : '' }}>Juni</option>
+                                            <option value="Juli" {{ old('periodebulan') == 'Juli' ? 'selected' : '' }}>Juli</option>
+                                            <option value="Agustus" {{ old('periodebulan') == 'Agustus' ? 'selected' : '' }}>Agustus</option>
+                                            <option value="September" {{ old('periodebulan') == 'September' ? 'selected' : '' }}>September</option>
+                                            <option value="Oktober" {{ old('periodebulan') == 'Oktober' ? 'selected' : '' }}>Oktober</option>
+                                            <option value="November" {{ old('periodebulan') == 'November' ? 'selected' : '' }}>November</option>
+                                            <option value="Desember" {{ old('periodebulan') == 'Desember' ? 'selected' : '' }}>Desember</option>
                                         </select>
                                         @error('periodebulan')
                                             <span class="text-danger">{{ $message }}</span>
@@ -49,7 +49,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="periodetahun">Periode Tahun:</label>
-                                        <input type="number" min="1990" max="2100" step="1" name="periodetahun" id="periodetahun" class="form-control" placeholder="Masukkan Periode Tahun">
+                                        <input type="number" min="1990" max="2100" step="1" name="periodetahun" id="periodetahun" class="form-control" placeholder="Masukkan Periode Tahun" value="{{ old('periodetahun') }}">
                                         @error('periodetahun')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -60,9 +60,9 @@
                                         <label for="rotasi">Rotasi:</label>
                                         <select class="form-control select2bs4" id="rotasi" name="rotasi" style="width: 100%;">
                                             <option disabled selected value> -- Pilih Rotasi -- </option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
+                                            <option value="1" {{ old('rotasi') == '1' ? 'selected' : '' }}>1</option>
+                                            <option value="2" {{ old('rotasi') == '2' ? 'selected' : '' }}>2</option>
+                                            <option value="3" {{ old('rotasi') == '3' ? 'selected' : '' }}>3</option>
                                         </select>
                                         @error('rotasi')
                                             <span class="text-danger">{{ $message }}</span>
@@ -72,7 +72,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="tanggal">Tanggal:</label>
-                                        <input type="date" name="tanggal" id="tanggal" class="form-control">
+                                        <input type="date" name="tanggal" id="tanggal" class="form-control" value="{{ old('tanggal') }}">
                                         @error('tanggal')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -80,13 +80,22 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ref">Ref:</label>
+                                        <input type="text" name="ref" id="ref" class="form-control" value="{{ old('ref')}}" placeholder="Masukkan Ref">
+                                        @error('ref')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="id_armada">Truk:</label>
                                         <select class="form-control select2bs4" id="id_armada" name="id_armada" style="width: 100%;">
                                             <option disabled selected value> -- Pilih Armada -- </option>
                                             @foreach ($armadas as $armada)
-                                                <option value={{$armada->id}}>{{$armada->nopol}}</option>
+                                                <option value="{{ $armada->id }}" {{ old('id_armada') == $armada->id ? 'selected' : '' }}>{{ $armada->nopol }}</option>
                                             @endforeach
                                         </select>
                                         @error('id_armada')
@@ -94,13 +103,13 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="id_pks">PKS:</label>
                                         <select class="form-control select2bs4" id="id_pks" name="id_pks" style="width: 100%;">
                                             <option disabled selected value> -- Pilih PKS -- </option>
                                             @foreach ($pkss as $pks)
-                                            <option value={{$pks->id}}>{{$pks->nama}}</option>
+                                                <option value="{{ $pks->id }}" {{ old('id_pks') == $pks->id ? 'selected' : '' }}>{{ $pks->nama }}</option>
                                             @endforeach
                                         </select>
                                         @error('id_pks')
@@ -108,13 +117,13 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="id_supplier">Supplier:</label>
                                         <select class="form-control select2bs4" id="id_supplier" name="id_supplier" style="width: 100%;">
                                             <option disabled selected value> -- Pilih Supplier -- </option>
                                             @foreach ($suppliers as $supplier)
-                                            <option value={{$supplier->id}}>{{$supplier->nama}}</option>
+                                                <option value="{{ $supplier->id }}" {{ old('id_supplier') == $supplier->id ? 'selected' : '' }}>{{ $supplier->nama }}</option>
                                             @endforeach
                                         </select>
                                         @error('id_supplier')
@@ -122,13 +131,14 @@
                                         @enderror
                                     </div>
                                 </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="weighin">Weigh In:</label>
                                         <div class="input-group">
-                                            <input type="number" name="weighin" id="weighin" class="form-control" placeholder="Masukkan Weigh In">
+                                            <input type="number" name="weighin" id="weighin" class="form-control" value="{{old('weighin')}}" placeholder="Masukkan Weigh In">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">Kg</span>
                                             </div>
@@ -142,7 +152,7 @@
                                     <div class="form-group">
                                         <label for="weighout">Weigh Out:</label>
                                         <div class="input-group">
-                                            <input type="number" name="weighout" id="weighout" class="form-control" placeholder="Masukkan Weigh Out">
+                                            <input type="number" name="weighout" id="weighout" class="form-control" value="{{old('weighout')}}" placeholder="Masukkan Weigh Out">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">Kg</span>
                                             </div>
@@ -158,7 +168,7 @@
                                     <div class="form-group">
                                         <label for="netgross">Net Gross:</label>
                                         <div class="input-group">
-                                            <input type="number" name="netgross" id="netgross" class="form-control" placeholder="Net Gross" readonly>
+                                            <input type="number" name="netgross" id="netgross" class="form-control" value="{{old('netgross')}}" placeholder="Net Gross" readonly>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">Kg</span>
                                             </div>
@@ -172,7 +182,7 @@
                                     <div class="form-group">
                                         <label for="penalty">Penalty:</label>
                                         <div class="input-group">
-                                            <input type="number" name="penalty" id="penalty" class="form-control" placeholder="Penalty">
+                                            <input type="number" name="penalty" id="penalty" class="form-control" value="{{old('penalty')}}" placeholder="Penalty">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">Kg</span>
                                             </div>
@@ -186,7 +196,7 @@
                                     <div class="form-group">
                                         <label for="netweigh">Net Weigh:</label>
                                         <div class="input-group">
-                                            <input type="number" name="netweigh" id="netweigh" class="form-control" placeholder="Net Weigh" readonly>
+                                            <input type="number" name="netweigh" id="netweigh" class="form-control" value="{{old('netweigh')}}" placeholder="Net Weigh" readonly>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">Kg</span>
                                             </div>
@@ -203,7 +213,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Rp</span>
                                             </div>
-                                            <input type="number" name="harga" id="harga" class="form-control" placeholder="Masukkan Harga">
+                                            <input type="number" name="harga" id="harga" class="form-control" value="{{old('harga')}}" placeholder="Masukkan Harga">
                                         </div>
                                         @error('harga')
                                             <span class="text-danger">{{ $message }}</span>
@@ -217,7 +227,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Rp</span>
                                             </div>
-                                            <input type="number" name="total" id="total" class="form-control" placeholder="Masukkan Total" readonly>
+                                            <input type="number" name="total" id="total" class="form-control" value="{{old('total')}}" placeholder="Masukkan Total" readonly>
                                         </div>
                                         @error('total')
                                             <span class="text-danger">{{ $message }}</span>
@@ -230,7 +240,7 @@
                                     <div class="form-group">
                                         <label for="pphpercentage">PPH percentage:</label>
                                         <div class="input-group">
-                                            <input type="number" name="pphpercentage" id="pphpercentage" step="0.01" class="form-control" placeholder="PPH Percentage">
+                                            <input type="number" name="pphpercentage" id="pphpercentage" step="0.01" value="{{old('pphpercentage')}}" class="form-control" placeholder="PPH Percentage">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">%</span>
                                             </div>
@@ -247,7 +257,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Rp</span>
                                             </div>
-                                            <input type="number" name="pph" id="pph" class="form-control" placeholder="Masukkan PPH" readonly>
+                                            <input type="number" name="pph" id="pph" class="form-control" value="{{old('pph')}}" placeholder="Masukkan PPH" readonly>
                                         </div>
                                         @error('pph')
                                             <span class="text-danger">{{ $message }}</span>
@@ -261,7 +271,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Rp</span>
                                             </div>
-                                            <input type="number" name="fee" id="fee" class="form-control" placeholder="Masukkan Fee">
+                                            <input type="number" name="fee" id="fee" class="form-control" value="{{old('fee')}}" placeholder="Masukkan Fee">
                                         </div>
                                         @error('fee')
                                             <span class="text-danger">{{ $message }}</span>
@@ -275,7 +285,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Rp</span>
                                             </div>
-                                            <input type="number" name="netto" id="netto" class="form-control" placeholder="Masukkan Netto" readonly>
+                                            <input type="number" name="netto" id="netto" class="form-control" value="{{old('netto')}}" placeholder="Masukkan Netto" readonly>
                                         </div>
                                         @error('netto')
                                             <span class="text-danger">{{ $message }}</span>
@@ -291,7 +301,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Rp</span>
                                             </div>
-                                            <input type="number" name="pelunasan" id="pelunasan" class="form-control" placeholder="Masukkan Pelunasan">
+                                            <input type="number" name="pelunasan" id="pelunasan" class="form-control" value="{{old('pelunasan')}}" placeholder="Masukkan Pelunasan">
                                         </div>
                                         @error('pelunasan')
                                             <span class="text-danger">{{ $message }}</span>
@@ -306,20 +316,23 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="ketlunas">Keterangan Lunas:</label>
-                                    <select class="form-control select2bs4" id="ketlunas" name="ketlunas" style="width: 100%;">
-                                        <option disabled selected value> -- Pilih Keterangan Lunas -- </option>
-                                        <option value="MDRI AY">MDRI AY</option>
-                                        <option value="BRI AY">BRI AY</option>
-                                        <option value="MDRI ENISS">MDRI ENISS</option>
-                                        <option value="BMD ATB">BMD ATB</option>
-                                        <option value="BMD JK">BMD JK</option>
-                                        <option value="MDRI WARSONO">MDRI WARSONO</option>
-                                    </select>
-                                    @error('ketlunas')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                    <div class="form-group">
+                                        <label for="ketlunas">Keterangan Lunas:</label>
+                                        <select class="form-control select2bs4" id="ketlunas" name="ketlunas" style="width: 100%;">
+                                            <option disabled selected value> -- Pilih Keterangan Lunas -- </option>
+                                            <option value="MDRI AY" {{ old('ketlunas') == 'MDRI AY' ? 'selected' : '' }}>MDRI AY</option>
+                                            <option value="BRI AY" {{ old('ketlunas') == 'BRI AY' ? 'selected' : '' }}>BRI AY</option>
+                                            <option value="MDRI ENISS" {{ old('ketlunas') == 'MDRI ENISS' ? 'selected' : '' }}>MDRI ENISS</option>
+                                            <option value="BMD ATB" {{ old('ketlunas') == 'BMD ATB' ? 'selected' : '' }}>BMD ATB</option>
+                                            <option value="BMD JK" {{ old('ketlunas') == 'BMD JK' ? 'selected' : '' }}>BMD JK</option>
+                                            <option value="MDRI WARSONO" {{ old('ketlunas') == 'MDRI WARSONO' ? 'selected' : '' }}>MDRI WARSONO</option>
+                                        </select>
+                                        @error('ketlunas')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
                                 </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-md-2">
@@ -327,8 +340,8 @@
                                         <label for="status">Status Lunas:</label>
                                         <select class="form-control select2bs4" id="status" name="status" style="width: 100%;">
                                             <option disabled selected value> -- Pilih Status Lunas -- </option>
-                                            <option value="Y">Yes</option>
-                                            <option value="N">No</option>
+                                            <option value="Y" {{ old('status') == 'Y' ? 'selected' : '' }}>Yes</option>
+                                            <option value="N" {{ old('status') == 'N' ? 'selected' : '' }}>No</option>
                                         </select>
                                         @error('status')
                                             <span class="text-danger">{{ $message }}</span>
@@ -338,7 +351,7 @@
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <label for="grade">Grade:</label>
-                                        <input type="text" name="grade" id="grade" class="form-control" placeholder="Masukkan Grade">
+                                        <input type="text" name="grade" id="grade" class="form-control" value="{{old('grade')}}" placeholder="Masukkan Grade">
                                         @error('grade')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -347,9 +360,12 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label for="keterangan">Keterangan:</label>
-                                        <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Masukkan Keterangan">
+                                        <input type="text" name="keterangan" id="keterangan" class="form-control" value="{{old('keterangan')}}" placeholder="Masukkan Keterangan">
                                     </div>
                                 </div>
+                                @error('keterangan')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="row">
                                 <div class="col-md-12">

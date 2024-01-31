@@ -46,6 +46,7 @@ class UpdatePenjualantbsRequest extends FormRequest
             'tgllunas' => 'nullable|date',
             'ketlunas' => 'nullable',
             'keterangan' => 'nullable',
+            'ref' => 'nullable',
         ];
     }
 }

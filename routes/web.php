@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Laporan\Transaksi\LaporanPenjualanBrondolanController;
 use App\Http\Controllers\Admin\Laporan\Transaksi\LaporanPenjualantbsController;
 use App\Http\Controllers\Admin\Master\ArmadaController;
 use App\Http\Controllers\Admin\Master\BlokController;
@@ -120,3 +121,10 @@ Route::controller(LaporanPenjualantbsController::class)->prefix('admin/laporan/t
     route::get('/create','create')->name('create');
     route::post('/generate','generate')->name('generate');
 });
+
+Route::controller(LaporanPenjualanBrondolanController::class)->prefix('admin/laporan/transaksi/penjualanbrondolan')
+->name('admin.laporan.transaksi.penjualanbrondolan.')->middleware('auth')->group(function(){
+    route::get('/create','create')->name('create');
+    route::post('/generate','generate')->name('generate');
+});
+

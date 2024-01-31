@@ -153,7 +153,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('admin.laporan.transaksi.penjualantbs.create')}}" class="nav-link">
+                            <a href="{{route('admin.laporan.transaksi.penjualanbrondolan.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                 Penjualan Brondolan

@@ -42,9 +42,6 @@ class StorePenjualantbsRequest extends FormRequest
             'fee'=> 'nullable',
             'netto' => 'nullable',
             'status' => 'nullable',
-            'pelunasan' => 'nullable',
-            'tgllunas' => 'nullable|date',
-            'ketlunas' => 'nullable',
             'keterangan' => 'nullable',
             'ref' => 'nullable',
         ];

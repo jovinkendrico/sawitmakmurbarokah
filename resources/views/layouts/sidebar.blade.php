@@ -1,7 +1,7 @@
   <!-- Brand Logo -->
   <a href="index3.html" class="brand-link">
     <img src="/AdminLTE/dist/img/AdminLTELogo.png" alt="Anugrah Tuah Barokah Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">Anugrah Tuah Barokah</span>
+    <span class="brand-text font-weight-light">Sawit Makmur</span>
   </a>
 
   <!-- Sidebar -->
@@ -32,11 +32,12 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-            <a href="/" class="nav-link">
+            <a href="/admin" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>Dashboard</p>
             </a>
         </li>
+
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
@@ -100,71 +101,151 @@
                   </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Cash
+                Gaji
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/cashmasuk" class="nav-link">
+                <a href="{{route('admin.transaksi.penjualantbs.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>
-                    Cash Masuk
-                  </p>
+                  <p>Panen</p>
                 </a>
               </li>
               <li class="nav-item">
-                  <a href="/cashkeluar" class="nav-link">
+                  <a href="{{route('admin.transaksi.penjualanbrondolan.index')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Cash Keluar</p>
+                    <p>Perawatan</p>
                   </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('admin.transaksi.penjualanbrondolan.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Armada</p>
+                </a>
+            </li>
             </ul>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Laporan
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                Blok Panen
                 <i class="fas fa-angle-left right"></i>
-              </p>
+                </p>
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>
-                        Transaksi
-                        </p>
-                        <i class="fas fa-angle-left right"></i>
+                <a href="/cashmasuk" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                    Cash Masuk
+                    </p>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/cashkeluar" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Cash Keluar</p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('admin.laporan.transaksi.penjualantbs.create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                Penjualan TBS
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('admin.laporan.transaksi.penjualanbrondolan.create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                Penjualan Brondolan
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
-          </li>
-          <li class="nav-item">
+            </li>
+        <li class="nav-item">
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                Inventaris
+                <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="/cashmasuk" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                    Cash Masuk
+                    </p>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/cashkeluar" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Cash Keluar</p>
+                    </a>
+                </li>
+            </ul>
+            </li>
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+            Cash
+            <i class="fas fa-angle-left right"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="/cashmasuk" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                Cash Masuk
+                </p>
+            </a>
+            </li>
+            <li class="nav-item">
+                <a href="/cashkeluar" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Cash Keluar</p>
+                </a>
+            </li>
+        </ul>
+        </li>
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+            Laporan
+            <i class="fas fa-angle-left right"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                    Transaksi
+                    </p>
+                    <i class="fas fa-angle-left right"></i>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('admin.laporan.transaksi.penjualantbs.create')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>
+                            Penjualan TBS
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.laporan.transaksi.penjualanbrondolan.create')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>
+                            Penjualan Brondolan
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </li>
+        <li class="nav-item">
             <a href="/users" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>Users</p>

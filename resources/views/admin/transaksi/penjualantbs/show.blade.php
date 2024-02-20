@@ -36,6 +36,9 @@
                             <div class="bg-light p-2 rounded">
                                 <h5 class="mb-0">Ref: <span class="text-muted">{{$penjualantbs->ref ? $penjualantbs->ref : '-'}}</span></h5>
                             </div>
+                            @if ($penjualantbs->status == 'Y')
+                                <x-paid-stamp/>
+                            @endif
                         </div>
                     </div>
                     <!-- Invoice table -->

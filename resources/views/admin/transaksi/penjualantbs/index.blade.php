@@ -45,7 +45,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{\Carbon\Carbon::parse($penjualantbs->tanggal)->format('d-m-Y')}}</td>
-                                <td>{{$penjualantbs['truk']['nopol']}}</td>
+                                <td>{{$penjualantbs['truk']['alias']}}</td>
                                 <td>{{number_format($penjualantbs->netweigh,0,'.',',')}} Kg</td>
                                 <td>Rp. {{number_format($penjualantbs->harga, 0, '.', ',')}}</td>
                                 <td>Rp. {{number_format($penjualantbs->total, 0, '.', ',')}}</td>

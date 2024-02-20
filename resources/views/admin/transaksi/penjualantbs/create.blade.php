@@ -294,60 +294,6 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="pelunasan">Pelunasan:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Rp</span>
-                                            </div>
-                                            <input type="number" name="pelunasan" id="pelunasan" class="form-control" value="{{old('pelunasan')}}" placeholder="Masukkan Pelunasan">
-                                        </div>
-                                        @error('pelunasan')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="tgllunas">Tanggal Lunas:</label>
-                                    <input type="date" name="tgllunas" id="tgllunas" class="form-control">
-                                    @error('tgllunas')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="ketlunas">Keterangan Lunas:</label>
-                                        <select class="form-control select2bs4" id="ketlunas" name="ketlunas" style="width: 100%;">
-                                            <option disabled selected value> -- Pilih Keterangan Lunas -- </option>
-                                            <option value="MDRI AY" {{ old('ketlunas') == 'MDRI AY' ? 'selected' : '' }}>MDRI AY</option>
-                                            <option value="BRI AY" {{ old('ketlunas') == 'BRI AY' ? 'selected' : '' }}>BRI AY</option>
-                                            <option value="MDRI ENISS" {{ old('ketlunas') == 'MDRI ENISS' ? 'selected' : '' }}>MDRI ENISS</option>
-                                            <option value="BMD ATB" {{ old('ketlunas') == 'BMD ATB' ? 'selected' : '' }}>BMD ATB</option>
-                                            <option value="BMD JK" {{ old('ketlunas') == 'BMD JK' ? 'selected' : '' }}>BMD JK</option>
-                                            <option value="MDRI WARSONO" {{ old('ketlunas') == 'MDRI WARSONO' ? 'selected' : '' }}>MDRI WARSONO</option>
-                                        </select>
-                                        @error('ketlunas')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <label for="status">Status Lunas:</label>
-                                        <select class="form-control select2bs4" id="status" name="status" style="width: 100%;">
-                                            <option disabled selected value> -- Pilih Status Lunas -- </option>
-                                            <option value="Y" {{ old('status') == 'Y' ? 'selected' : '' }}>Yes</option>
-                                            <option value="N" {{ old('status') == 'N' ? 'selected' : '' }}>No</option>
-                                        </select>
-                                        @error('status')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <label for="grade">Grade:</label>
@@ -357,7 +303,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-10">
                                     <div class="form-group">
                                         <label for="keterangan">Keterangan:</label>
                                         <input type="text" name="keterangan" id="keterangan" class="form-control" value="{{old('keterangan')}}" placeholder="Masukkan Keterangan">

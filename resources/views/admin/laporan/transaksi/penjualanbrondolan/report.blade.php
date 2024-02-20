@@ -84,14 +84,14 @@
                         <td>{{number_format($result->netto, 0, '.', ',')}}</td>
                         <td>
                             @if ($result->id_pks == null)
-                                -
+                                AGEN
                             @else
                             {{$result['pks']['alias']}}
                             @endif
                         </td>
                         <td>
                             @if ($result->id_supplier == null)
-                                -
+                                AGEN
                             @else
                             {{$result['supplier']['alias']}}
                             @endif
